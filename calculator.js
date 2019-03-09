@@ -22,71 +22,30 @@ function getMatrix(rows, cols) {
     let m = Math.min(rows, cols);
     let n = rows + cols - m;
 
-    var matrix = [];
-    for (let i = 0; i < m; i++) {
-        let inner = [];
-        for (let j = 0; j < n; j++) {
-            inner.push(0);
-        }
-        matrix.push(inner);
-    }
-
-    console.log(matrix);
-    console.log(matrix[0]);
-    matrix[0] = matrix[0].map(() => 1);
 
     for (let i = 0; i < n - 1; i++) {
-        tours[0].push([i, i + 1])
+        tours[0].push([i, i + 1]);
+        i % 2 == 0 && i > 0 ? tours[0].push([map(n, 1, i), map(n, 1, i + 1)]) : 0;
     }
 
-
     console.log(tours);
-    console.log(matrix);
-    matrix.forEach((row, idx) => {
-        matrix[idx][0] = 2;
-        matrix[idx][n - 1] = 1;
-        matrix[idx][n - 2] = 1;
+
+
+    for (let idx = 0; idx < m - 2; idx++) {
         tours[1].push([map(n, idx, 0), map(n, idx + 1, 0)]);
         tours[0].push([map(n, idx, n - 1), map(n, idx + 1, n - 1)]);
         tours[0].push([map(n, idx + 1, n - 2), map(n, idx + 2, n - 2)]);
-    });
-    tours[0].pop();
-    tours[0].pop();
-    tours[0].pop();
-    tours[0].push([map(n, m - 1, n - 1), map(n, m - 1, n - 2)]);
-    tours[1].pop();
+    }
+    tours[1].push([map(n, m - 2, 0), map(n, m - 1, 0)]);
+    tours[0].push([map(n, m - 2, n - 1), map(n, m - 1, n - 1)]);
 
-    console.log(tours);
+    tours[0].push([map(n, m - 1, n - 2), map(n, m - 1, n - 1)]);
 
 
-    console.log(matrix);
-    matrix[1].forEach((col, idx) => {
-        idx % 2 == 0 && idx > 0 ? matrix[1][idx] = 1 : 0;
-
-        idx % 2 == 0 && idx > 0 ? tours[0].push([map(n, 1, idx), map(n, 1, idx + 1)]) : 0;
-    });
-
-    tours[0].pop();
     tours[0].push([map(n, 0, 0), map(n, 1, 2)]);
     tours[1].push([map(n, 0, 0), map(n, 1, 1)]);
 
-    matrix[0][0] = 0;
-    matrix[1][1] = 2;
-    /*
-        let g = (m * n + 1) / 2;
-        let b = 0;
-
-        if ((g - 1) % 2 == 1) {
-            if ((g - 1) % 4 == 0) {
-                b = g - 1;
-            } else {
-                b = g - 3;
-            }
-            case1(m, n, matrix, b);
-        }
-        console.log("g: ", g);
-    */
-    calculateMovesSalespersonOne(m, n, matrix, tours);
+    calculateMovesSalespersonOne(m, n, tours);
 
     draw(m, n);
     drawTour(m, n, tours);
@@ -98,23 +57,14 @@ function map(n, row, col) {
 }
 
 
-function case1(m, n, matrix, b) {
-    let dist = b - (n - 1) - (n - 3) - 2 * (m - 1);
-
-}
-
-function calculateMovesSalespersonOne(m, n, matrix, tours) {
+function calculateMovesSalespersonOne(m, n, tours) {
     let g = ((m * n) + 1) / 2;
     let b = g - (g % 2) - 1;
 
     let column = n - 3;
     let d = b - (n - 1) - (n - 3) - (2 * (m - 1)) - 1;
 
-    console.log("g", g);
-    console.log("b", b);
-    console.log("d", d);
-
-    tours[0].push([map(n, 0, 0), map(n, 1, 2)]);
+    // tours[0].push([map(n, 0, 0), map(n, 1, 2)]);
 
     let x;
     let leftMostColumn = [];
@@ -129,6 +79,7 @@ function calculateMovesSalespersonOne(m, n, matrix, tours) {
     while (d > 0) {
         console.log("2 -----------");
         x = 0;
+
         while (x < m - 2 && d > 0) {
             tours[0].push([map(n, x + 1, column), map(n, x + 2, column)]);
             tours[0].push([map(n, x + 1, column - 1), map(n, x + 2, column - 1)]);
@@ -137,14 +88,12 @@ function calculateMovesSalespersonOne(m, n, matrix, tours) {
             console.log(x);
             leftMostColumn[x + 1] = column - 1;
         }
-        tours[0].push([map(n, x + 1, column), map(n, x + 1, column - 1)]);
         bottomMostRow[column] = x + 1;
         bottomMostRow[column - 1] = x + 1;
+        if (d > 0)
+            tours[0].push([map(n, x + 1, column), map(n, x + 1, column - 1)]);
         column -= 2;
     }
-
-    tours[0].pop();
-    console.log("d -- ", d);
     if (n !== 5 && m !== 5) {
         if (x % 2 == 0) {
             tours[0].push([map(n, x + 1, column + 2), map(n, x + 2, column + 2)]);
@@ -154,19 +103,11 @@ function calculateMovesSalespersonOne(m, n, matrix, tours) {
 
             bottomMostRow[column + 1] = x + 2;
             bottomMostRow[column + 2] = x + 2;
-            //  for (let i = 0; i < m - 2; i++) {
-            //    leftMostColumn.push(column + 1);
-            //   }
         } else {
             tours[0].push([map(n, x + 1, column + 1), map(n, x + 1, column + 2)]);
             tours[0].push([map(n, 1, column), map(n, 2, column)]);
             tours[0].push([map(n, 1, column - 1), map(n, 2, column - 1)]);
             tours[0].push([map(n, 2, column), map(n, 2, column - 1)]);
-            /*    for (let i = 0; i < m - 2; i++) {
-                    col1.push(column + 1);
-                }
-                col1[0] = column - 1;
-                */
             bottomMostRow[column] = 2;
             bottomMostRow[column - 1] = 2;
 
@@ -206,30 +147,6 @@ function calculateMovesSalespersonOne(m, n, matrix, tours) {
         tours[1].push([map(n, i, 1 + i % 2), map(n, i + 1, 1 + i % 2)]);
     }
     tours[1].pop();
-    /*
-    let row = m - 1;
-    tours[1].push([map(n, m - 1, 0), map(n, m - 1, 1)]);
-    let col = 2;
-    while (row > 3) {
-        col = 2;
-        while (col < leftMostColumn[row]) {
-            tours[1].push([map(n, row, col - 1), map(n, row, col)]);
-            col++
-        }
-        if (row % 2 == 0) {
-            tours[1].push([map(n, row, col - 1), map(n, row - 1, col - 1)]);
-        } else {
-            tours[1].push([map(n, row, 1), map(n, row - 1, 1)]);
-
-        }
-        row--;
-    }
-
-    while (col > 1) {
-        tours[1].push([map(n, 3, col-1), map(n, 3, col-2)]);
-        col-=2;
-    }
-*/
 }
 
 var colors = ["red", "blue", "green", "orange"];
