@@ -1,0 +1,2132 @@
+\documentclass{article}
+
+\usepackage{times}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german, english]{babel}
+\usepackage[sort,numbers]{natbib}
+\thispagestyle{empty}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{comment}
+\usepackage{here}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{calc,patterns,decorations.markings}
+\usepackage{pdflscape}
+\usepackage{tikzscale}
+\usepackage{filecontents}
+\setlength{\bibsep}{0.0pt}
+\usepackage[textsize=tiny]{todonotes}
+
+\usepackage{pgf}
+\usepackage{graphics}
+\usepackage[margin=1in]{geometry}
+\usetikzlibrary{arrows,automata}
+ %to enable backgrounds in tikz graphics -> edges do not overlay vertices
+\usetikzlibrary{backgrounds}
+\pgfdeclarelayer{myback}
+\pgfsetlayers{background,myback,main}
+ %to still have the possibility of exploiting the background layer
+
+
+\begin{document}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [below of=0]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [below of=3]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [below of=6]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (6)
+(6) edge node {} (3)
+(3) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (5)
+(5) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 0 } \label{drones 2 method 1 vertices 12 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [below of=0]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [below of=3]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [below of=6]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(4) edge node {} (5)
+(5) edge node {} (8)
+(8) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (6)
+(6) edge node {} (4)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (3)
+(3) edge node {} (7)
+(7) edge node {} (4)
+(4) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 4 } \label{drones 2 method 1 vertices 12 base 4}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [below of=0]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [below of=3]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [below of=6]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(5) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (9)
+(9) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (5)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (5)
+(5) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 5 } \label{drones 2 method 1 vertices 12 base 5}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [below of=0]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [below of=3]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [below of=6]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(6) edge node {} (9)
+(9) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (6)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (3)
+(3) edge node {} (6)
+(6) edge node {} (4)
+(4) edge node {} (5)
+(5) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 6 } \label{drones 2 method 1 vertices 12 base 6}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [below of=0]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [below of=3]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [below of=6]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (3)
+(3) edge node {} (6)
+(6) edge node {} (9)
+(9) edge node {} (7)
+(7) edge node {} (4)
+(4) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(2) edge node {} (5)
+(5) edge node {} (8)
+(8) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (2)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 0 } \label{drones 2 method 1 vertices 12 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (11)
+(11) edge node {} (7)
+(7) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 0 } \label{drones 2 method 1 vertices 12 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(4) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (4)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (1)
+(1) edge node {} (5)
+(5) edge node {} (4)
+(4) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 4 } \label{drones 2 method 1 vertices 12 base 4}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(3) edge node {} (7)
+(7) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (8)
+(8) edge node {} (3)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 12 base 3 } \label{drones 2 method 1 vertices 12 base 3}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [below of=0]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (5)
+(5) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 14 base 0 } \label{drones 2 method 1 vertices 14 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [below of=0]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(4) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (4)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 14 base 4 } \label{drones 2 method 1 vertices 14 base 4}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [below of=0]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(5) edge node {} (6)
+(6) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (5)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 14 base 5 } \label{drones 2 method 1 vertices 14 base 5}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (8)
+(8) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 0 } \label{drones 2 method 1 vertices 15 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (8)
+(8) edge node {} (3)
+(3) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (4)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 0 } \label{drones 2 method 1 vertices 15 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (8)
+(8) edge node {} (6)
+(6) edge node {} (1)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (7)
+(7) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 1 } \label{drones 2 method 1 vertices 15 base 1}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (2)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 0 } \label{drones 2 method 1 vertices 15 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(3) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (7)
+(7) edge node {} (4)
+(4) edge node {} (3)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 3 } \label{drones 2 method 1 vertices 15 base 3}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(4) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (4)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 0 } \label{drones 2 method 1 vertices 15 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (6)
+(6) edge node {} (1)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 15 base 0 } \label{drones 2 method 1 vertices 15 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [below of=8]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (6)
+(6) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (4)
+(4) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (11)
+(11) edge node {} (7)
+(7) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 0 } \label{drones 2 method 1 vertices 16 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [below of=8]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(2) edge node {} (3)
+(3) edge node {} (7)
+(7) edge node {} (14)
+(14) edge node {} (15)
+(15) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (6)
+(6) edge node {} (2)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (5)
+(5) edge node {} (9)
+(9) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (4)
+(4) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 2 } \label{drones 2 method 1 vertices 16 base 2}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [below of=8]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (7)
+(7) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(3) edge node {} (6)
+(6) edge node {} (9)
+(9) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (15)
+(15) edge node {} (11)
+(11) edge node {} (3)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 0 } \label{drones 2 method 1 vertices 16 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [below of=8]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (9)
+(9) edge node {} (6)
+(6) edge node {} (5)
+(5) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(2) edge node {} (3)
+(3) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (11)
+(11) edge node {} (15)
+(15) edge node {} (14)
+(14) edge node {} (10)
+(10) edge node {} (2)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 0 } \label{drones 2 method 1 vertices 16 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [below of=0]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=4]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [below of=8]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(7) edge node {} (11)
+(11) edge node {} (15)
+(15) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (10)
+(10) edge node {} (7)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (4)
+(4) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 7 } \label{drones 2 method 1 vertices 16 base 7}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=0]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (8)
+(8) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (15)
+(15) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (14)
+(14) edge node {} (9)
+(9) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 0 } \label{drones 2 method 1 vertices 16 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=0]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(7) edge node {} (15)
+(15) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (7)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (5)
+(5) edge node {} (15)
+(15) edge node {} (6)
+(6) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 7 } \label{drones 2 method 1 vertices 16 base 7}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=0]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (6)
+(6) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(3) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (15)
+(15) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (5)
+(5) edge node {} (4)
+(4) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (3)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 0 } \label{drones 2 method 1 vertices 16 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [right of=4]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [below of=0]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [right of=9]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [right of=14]{15};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(2) edge node {} (9)
+(9) edge node {} (10)
+(10) edge node {} (14)
+(14) edge node {} (15)
+(15) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (3)
+(3) edge node {} (2)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (5)
+(5) edge node {} (4)
+(4) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 16 base 2 } \label{drones 2 method 1 vertices 16 base 2}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (13)
+(13) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (14)
+(14) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 0 } \label{drones 2 method 1 vertices 20 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(13) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (19)
+(19) edge node {} (14)
+(14) edge node {} (8)
+(8) edge node {} (13)
+;
+\path[draw=red,thick,solid]
+(13) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+(0) edge node {} (5)
+(5) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (13)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 13 } \label{drones 2 method 1 vertices 20 base 13}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (16)
+;
+\path[draw=red,thick,solid]
+(16) edge node {} (17)
+(17) edge node {} (13)
+(13) edge node {} (8)
+(8) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (16)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 16 } \label{drones 2 method 1 vertices 20 base 16}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(19) edge node {} (13)
+(13) edge node {} (7)
+(7) edge node {} (1)
+(1) edge node {} (0)
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (19)
+;
+\path[draw=red,thick,solid]
+(19) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (14)
+(14) edge node {} (19)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 19 } \label{drones 2 method 1 vertices 20 base 19}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(2) edge node {} (1)
+(1) edge node {} (6)
+(6) edge node {} (0)
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (7)
+(7) edge node {} (2)
+;
+\path[draw=red,thick,solid]
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (13)
+(13) edge node {} (8)
+(8) edge node {} (2)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 2 } \label{drones 2 method 1 vertices 20 base 2}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(3) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (19)
+(19) edge node {} (14)
+(14) edge node {} (9)
+(9) edge node {} (3)
+;
+\path[draw=red,thick,solid]
+(3) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 3 } \label{drones 2 method 1 vertices 20 base 3}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(5) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+(0) edge node {} (5)
+;
+\path[draw=red,thick,solid]
+(5) edge node {} (6)
+(6) edge node {} (7)
+(7) edge node {} (8)
+(8) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 5 } \label{drones 2 method 1 vertices 20 base 5}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(7) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (7)
+;
+\path[draw=red,thick,solid]
+(7) edge node {} (8)
+(8) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (7)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 2 method 1 vertices 20 base 7 } \label{drones 2 method 1 vertices 20 base 7}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(0) edge node {} (6)
+(6) edge node {} (12)
+(12) edge node {} (8)
+(8) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (2)
+(2) edge node {} (1)
+(1) edge node {} (0)
+;
+\path[draw=red,thick,solid]
+(0) edge node {} (13)
+(13) edge node {} (19)
+(19) edge node {} (14)
+(14) edge node {} (7)
+(7) edge node {} (0)
+;
+\path[draw=green,thick,solid]
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (11)
+(11) edge node {} (0)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 0 } \label{drones 3 method 1 vertices 20 base 0}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(12) edge node {} (13)
+(13) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (11)
+(11) edge node {} (12)
+;
+\path[draw=red,thick,solid]
+(12) edge node {} (6)
+(6) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (7)
+(7) edge node {} (12)
+;
+\path[draw=green,thick,solid]
+(12) edge node {} (8)
+(8) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (12)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 12 } \label{drones 3 method 1 vertices 20 base 12}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(13) edge node {} (17)
+(17) edge node {} (16)
+(16) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (11)
+(11) edge node {} (12)
+(12) edge node {} (13)
+;
+\path[draw=red,thick,solid]
+(13) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (13)
+;
+\path[draw=green,thick,solid]
+(13) edge node {} (8)
+(8) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (13)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 13 } \label{drones 3 method 1 vertices 20 base 13}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (6)
+(6) edge node {} (11)
+(11) edge node {} (16)
+;
+\path[draw=red,thick,solid]
+(16) edge node {} (18)
+(18) edge node {} (19)
+(19) edge node {} (14)
+(14) edge node {} (8)
+(8) edge node {} (12)
+(12) edge node {} (17)
+(17) edge node {} (16)
+;
+\path[draw=green,thick,solid]
+(16) edge node {} (13)
+(13) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (3)
+(3) edge node {} (7)
+(7) edge node {} (16)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 16 } \label{drones 3 method 1 vertices 20 base 16}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(19) edge node {} (14)
+(14) edge node {} (9)
+(9) edge node {} (4)
+(4) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (19)
+;
+\path[draw=red,thick,solid]
+(19) edge node {} (18)
+(18) edge node {} (17)
+(17) edge node {} (16)
+(16) edge node {} (15)
+(15) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (11)
+(11) edge node {} (19)
+;
+\path[draw=green,thick,solid]
+(19) edge node {} (1)
+(1) edge node {} (0)
+(0) edge node {} (6)
+(6) edge node {} (12)
+(12) edge node {} (13)
+(13) edge node {} (19)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 19 } \label{drones 3 method 1 vertices 20 base 19}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(2) edge node {} (1)
+(1) edge node {} (0)
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (6)
+(6) edge node {} (2)
+;
+\path[draw=red,thick,solid]
+(2) edge node {} (7)
+(7) edge node {} (11)
+(11) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (12)
+(12) edge node {} (2)
+;
+\path[draw=green,thick,solid]
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (13)
+(13) edge node {} (8)
+(8) edge node {} (2)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 2 } \label{drones 3 method 1 vertices 20 base 2}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (13)
+(13) edge node {} (12)
+(12) edge node {} (3)
+;
+\path[draw=red,thick,solid]
+(3) edge node {} (11)
+(11) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (3)
+;
+\path[draw=green,thick,solid]
+(3) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (10)
+(10) edge node {} (5)
+(5) edge node {} (0)
+(0) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 3 } \label{drones 3 method 1 vertices 20 base 3}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (17)
+(17) edge node {} (12)
+(12) edge node {} (11)
+(11) edge node {} (0)
+(0) edge node {} (5)
+;
+\path[draw=red,thick,solid]
+(5) edge node {} (13)
+(13) edge node {} (14)
+(14) edge node {} (19)
+(19) edge node {} (18)
+(18) edge node {} (5)
+;
+\path[draw=green,thick,solid]
+(5) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (8)
+(8) edge node {} (7)
+(7) edge node {} (6)
+(6) edge node {} (5)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 5 } \label{drones 3 method 1 vertices 20 base 5}
+ \end{center} \end{figure}
+\begin{figure}[htp]
+\begin{center}
+\resizebox{\ifdim\width>\linewidth.9\linewidth\else\width\fi}{!}{
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.5cm,semithick]
+  \tikzstyle{every circle}=[fill=white,fill opacity=.85,draw=black,text=black,text opacity=1]
+\node[circle] (0) {0};
+\node[circle] (1) [right of=0]{1};
+\node[circle] (2) [right of=1]{2};
+\node[circle] (3) [right of=2]{3};
+\node[circle] (4) [right of=3]{4};
+\node[circle] (5) [below of=0]{5};
+\node[circle] (6) [right of=5]{6};
+\node[circle] (7) [right of=6]{7};
+\node[circle] (8) [right of=7]{8};
+\node[circle] (9) [right of=8]{9};
+\node[circle] (10) [below of=5]{10};
+\node[circle] (11) [right of=10]{11};
+\node[circle] (12) [right of=11]{12};
+\node[circle] (13) [right of=12]{13};
+\node[circle] (14) [right of=13]{14};
+\node[circle] (15) [below of=10]{15};
+\node[circle] (16) [right of=15]{16};
+\node[circle] (17) [right of=16]{17};
+\node[circle] (18) [right of=17]{18};
+\node[circle] (19) [right of=18]{19};
+\begin{pgfonlayer}{myback}
+\path[draw=blue,thick,solid]
+(7) edge node {} (0)
+(0) edge node {} (5)
+(5) edge node {} (10)
+(10) edge node {} (15)
+(15) edge node {} (16)
+(16) edge node {} (11)
+(11) edge node {} (7)
+;
+\path[draw=red,thick,solid]
+(7) edge node {} (12)
+(12) edge node {} (17)
+(17) edge node {} (18)
+(18) edge node {} (19)
+(19) edge node {} (14)
+(14) edge node {} (13)
+(13) edge node {} (8)
+(8) edge node {} (7)
+;
+\path[draw=green,thick,solid]
+(7) edge node {} (6)
+(6) edge node {} (1)
+(1) edge node {} (2)
+(2) edge node {} (3)
+(3) edge node {} (4)
+(4) edge node {} (9)
+(9) edge node {} (7)
+;
+\end{pgfonlayer}
+\end{tikzpicture} } \caption[drones503]{drones 3 method 1 vertices 20 base 7 } \label{drones 3 method 1 vertices 20 base 7}
+ \end{center} \end{figure}
+\end{document}
